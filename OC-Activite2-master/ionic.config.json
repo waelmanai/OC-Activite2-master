@@ -1,0 +1,8 @@
+{
+  "name": "OC Act2",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

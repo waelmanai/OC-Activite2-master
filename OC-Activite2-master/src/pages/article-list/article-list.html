@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only (click)="onToggleMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button *ngFor="let article of articles; let i =index;"
+            (click)="onClickArticle(i)"
+            ion-item [color]="!article.isLended ? 'secondary' : 'primary'">
+      {{ article.name }}
+    </button>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-card >
+    <ion-card-content>
+      <button ion-button block outline (click)="onSave()">Enregistrer sur le serveur</button>
+      <button ion-button block outline (click)="onFetch()">Récupérer depuis le serveur</button>
+    </ion-card-content>
+  </ion-card>
+</ion-footer>

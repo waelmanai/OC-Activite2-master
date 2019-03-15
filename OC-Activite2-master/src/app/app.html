@@ -1,0 +1,32 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item icon-start (click)="onNavigate(tabsPage)" *ngIf="this.isAuth">
+        <ion-icon name="cart"></ion-icon>
+        Article
+      </button>
+      <button ion-item icon-start (click)="onNavigate(optionsPage)" *ngIf="this.isAuth">
+        <ion-icon name="options"></ion-icon>
+        Options
+      </button>
+      <button ion-item icon-start (click)="onNavigate(signinPage)" *ngIf="!this.isAuth">
+        <ion-icon name="person"></ion-icon>
+        Connexion
+      </button>
+      <button ion-item icon-start (click)="onNavigate(signupPage)" *ngIf="!this.isAuth">
+        <ion-icon name="person-add"></ion-icon>
+        Inscription
+      </button>
+      <button ion-item icon-start (click)="onDisconnect()" *ngIf="this.isAuth">
+        <ion-icon name="exit"></ion-icon>
+        Déconnexion
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="authPage" #content></ion-nav>
